@@ -1,0 +1,17 @@
+.btn {
+    border-radius: 10px;
+    border: 1px solid gray;
+    box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);    
+    color: lightcyan;
+    padding: 8px 12px;
+    &:active {
+        background-color: rgba(34, 60, 80, 0.2);
+        transform: scale(0.97);
+    }
+    &_light {
+        background-color: blue;
+    }
+    &_dark {
+        background-color: blueviolet;
+    }
+}
