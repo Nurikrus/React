@@ -1,15 +1,16 @@
 import { useCallback, useMemo } from "react";
 import { Message } from "../Message";
-import { Form } from "../Form";
-import { AUTHORS } from "../../utils/constants";
+//import { Form } from "../Form";
+//import { AUTHORS } from "../../utils/constants";
 import { ChatList } from "../Chat";
 import { useParams } from "react-router-dom";
 import { useHistory } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
 import { addChat, deleteChat } from '../../store/chats/action';
-import { addMessageWithReply } from "../../store/messages/action";
+//import { addMessageWithReply } from "../../store/messages/action";
 import { selectChats, selectChatsLength, selectFirstChatId, selectIfChatExists } from "../../store/chats/selectors";
 import { selectMessages } from "../../store/messages/selector";
+import { FormContainer } from "../Form/FormContaner";
 
 function Chats() {
 
@@ -26,14 +27,13 @@ function Chats() {
     const chatExists = useSelector(selectChatExists);
 
 
-    const sendMessage = useCallback((text, author) => {
-        dispatch(addMessageWithReply(chatId, text, author))
-    }, [chatId, dispatch])
+    //const sendMessage = useCallback((text, author) => {
+    //    dispatch(addMessageWithReply(chatId, text, author))
+    //}, [chatId, dispatch])
 
-
-    const handleAddMessage = useCallback((text) => {
-        sendMessage(text, AUTHORS.HUMAN)
-    }, [sendMessage]);
+    //const handleAddMessage = useCallback((text) => {
+    //    sendMessage(text, AUTHORS.HUMAN)
+    //}, [sendMessage]);
 
     const handleAddChat = useCallback((name) => {
         dispatch(addChat(name));
@@ -70,7 +70,7 @@ function Chats() {
                             />
                         ))
                     }
-                    <Form onSubmit={handleAddMessage} />
+                    <FormContainer /*onSubmit={handleAddMessage}*/ />
                 </>
             }
         </div>
